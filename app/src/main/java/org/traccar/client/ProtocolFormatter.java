@@ -30,7 +30,7 @@ public class ProtocolFormatter {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme(secure ? "https" : "http").encodedAuthority(address + ':' + port)
                 .appendQueryParameter("id", position.getDeviceId())
-                .appendQueryParameter("timestamp", String.valueOf(position.getTime().getTime() / 1000) + rollover)
+                .appendQueryParameter("timestamp", String.valueOf((position.getTime().getTime() / 1000) + rollover))
                 .appendQueryParameter("lat", String.valueOf(position.getLatitude()))
                 .appendQueryParameter("lon", String.valueOf(position.getLongitude()))
                 .appendQueryParameter("speed", String.valueOf(position.getSpeed()))
